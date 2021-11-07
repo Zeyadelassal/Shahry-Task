@@ -22,6 +22,8 @@
 		D66EBC30273856A100B043AE /* ProductListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC2F273856A100B043AE /* ProductListDataSource.swift */; };
 		D66EBC352738573900B043AE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC342738573900B043AE /* Network.swift */; };
 		D66EBC372738575B00B043AE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC362738575B00B043AE /* WebService.swift */; };
+		D66EBC3A27385DA600B043AE /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC3827385DA600B043AE /* ProductListViewController.swift */; };
+		D66EBC3B27385DA600B043AE /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66EBC3927385DA600B043AE /* ProductListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		D66EBC2F273856A100B043AE /* ProductListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSource.swift; sourceTree = "<group>"; };
 		D66EBC342738573900B043AE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D66EBC362738575B00B043AE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		D66EBC3827385DA600B043AE /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		D66EBC3927385DA600B043AE /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		DF840552BA1C3F8CB4877B24 /* Pods_Shary_Task_Shary_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shary_Task_Shary_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42F30D3484ECF89DE7D9837 /* Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-Shary-Task-Shary-TaskUITests/Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +205,8 @@
 		D66EBC2927384B2C00B043AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D66EBC3827385DA600B043AE /* ProductListViewController.swift */,
+				D66EBC3927385DA600B043AE /* ProductListViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 			files = (
 				D66EBC0427384A8C00B043AE /* LaunchScreen.storyboard in Resources */,
 				D66EBC0127384A8C00B043AE /* Assets.xcassets in Resources */,
+				D66EBC3B27385DA600B043AE /* ProductListViewController.xib in Resources */,
 				D66EBBFC27384A8800B043AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +495,7 @@
 				D66EBC352738573900B043AE /* Network.swift in Sources */,
 				D66EBBF527384A8800B043AE /* AppDelegate.swift in Sources */,
 				D66EBBF727384A8800B043AE /* SceneDelegate.swift in Sources */,
+				D66EBC3A27385DA600B043AE /* ProductListViewController.swift in Sources */,
 				D66EBC2E27384B6400B043AE /* ProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

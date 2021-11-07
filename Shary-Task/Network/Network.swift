@@ -23,15 +23,13 @@ class Network{
         
         let urlHeaders = headers != nil ? HTTPHeaders(headers!) : nil
         let URL = WebService.BASE_URL + url
-        
-        AF.request(URL + url,parameters: parameters,encoding: encoding)
+        AF.request(URL,parameters: parameters,encoding: encoding)
             .validate()
             .responseDecodable(of: T.self) { (response) in
                 print("response \(response)")
                 if let error = response.error {
                     isError(error.errorDescription)
                 }else{
-                    print(response.value)
                     isSuccess(response.value)
                 }
             }

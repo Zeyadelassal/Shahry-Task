@@ -8,6 +8,6 @@
 import Foundation
 
 struct WebService {
-    static let BASE_URL = "https://fakestoreapi.com?limit=7"
+    static let BASE_URL = "https://fakestoreapi.com"
     static let PRODUCTS = "/products"
 }
