@@ -20,9 +20,17 @@ class ProductListViewModel{
     var productsCount = 7
     var NextLimit = 7
     var isFetchingData = false
-    
+     
+    var selectedProduct : Product?
+        
     init(){
         productsDriver = productsRelay.asDriver(onErrorJustReturn: [])
+    }
+    
+    var selectedProductIndex : Int = 0{
+        didSet{
+            self.selectedProduct = self.productsRelay.value[selectedProductIndex]
+        }
     }
     
     

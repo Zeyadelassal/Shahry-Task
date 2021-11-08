@@ -19,7 +19,6 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         lblTitle.numberOfLines = 2
-        
     }
     
     
@@ -44,12 +43,8 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     }
     
     private func setShadow(){
-        self.layer.cornerRadius = 14
-        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05).cgColor
-        self.layer.shadowOpacity = 1
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = 8
-        self.layer.masksToBounds = false
+        let shadowColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        createShadow(color: shadowColor, opacity: 1, offset: CGSize(width: 0, height: 0), radius: 8, cornerRadius: 14)
     }
     
 }

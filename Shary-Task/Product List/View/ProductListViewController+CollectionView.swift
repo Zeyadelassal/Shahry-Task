@@ -42,6 +42,14 @@ extension ProductListViewController{
                 }
             }
         }).disposed(by: disposeBag)
+        
+        colProducts.rx.itemSelected.subscribe(onNext: {
+            [weak self] indexPath in
+            guard let self = self else {return}
+            guard let viewModel = self.viewModel else {return}
+            viewModel.selectedProductIndex = indexPath.item
+            self.moveToProductDetails()
+        }).disposed(by: disposeBag)
     }
     
 }

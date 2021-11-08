@@ -65,3 +65,15 @@ extension UIColor {
     static var gold : UIColor { UIColor(hex: 0xfdbc4b)}
     static var grey : UIColor { UIColor(hex: 0xBEBCBB)}
 }
+
+
+extension UIView{
+    func createShadow(color:UIColor,opacity:Float,offset:CGSize,radius:CGFloat,cornerRadius:CGFloat){
+        layer.cornerRadius = cornerRadius
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.masksToBounds = false
+    }
+}

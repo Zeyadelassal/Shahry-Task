@@ -32,6 +32,7 @@
 		D66EBC48273880D800B043AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC47273880D800B043AE /* Constants.swift */; };
 		D66EBC4B273899B800B043AE /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EBC49273899B800B043AE /* ProductDetailsViewController.swift */; };
 		D66EBC4C273899B800B043AE /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66EBC4A273899B800B043AE /* ProductDetailsViewController.xib */; };
+		D6FD976C2739C57000599598 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FD976B2739C57000599598 /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D66EBC47273880D800B043AE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D66EBC49273899B800B043AE /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		D66EBC4A273899B800B043AE /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
+		D6FD976B2739C57000599598 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		DF840552BA1C3F8CB4877B24 /* Pods_Shary_Task_Shary_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shary_Task_Shary_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42F30D3484ECF89DE7D9837 /* Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-Shary-Task-Shary-TaskUITests/Pods-Shary-Task-Shary-TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 			children = (
 				D66EBC432738757B00B043AE /* Extensions.swift */,
 				D66EBC47273880D800B043AE /* Constants.swift */,
+				D6FD976B2739C57000599598 /* BackButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				D66EBC3A27385DA600B043AE /* ProductListViewController.swift in Sources */,
 				D66EBC442738757C00B043AE /* Extensions.swift in Sources */,
 				D66EBC2E27384B6400B043AE /* ProductModel.swift in Sources */,
+				D6FD976C2739C57000599598 /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

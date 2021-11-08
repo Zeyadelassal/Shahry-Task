@@ -8,7 +8,8 @@
 import Foundation
 
 struct CONSTANTS{
-    
+    static var CURRENCY : String {"EGP"}
+    static var BACK_ARROW = "Back-Arrow"
 }
 
 struct IMAGES{
