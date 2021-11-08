@@ -22,7 +22,7 @@ class Network{
     func getMethod<T:Codable>(url:String,parameters:[String:Any]?,headers:[String:String]?,encoding:ParameterEncoding,isSuccess: @escaping(_ response:T?)->Void,isError:@escaping(String?)->Void){
         
         let urlHeaders = headers != nil ? HTTPHeaders(headers!) : nil
-        let URL = WebService.BASE_URL + url
+        let URL = WEB_SERVICE.BASE_URL + url
         AF.request(URL,parameters: parameters,encoding: encoding)
             .validate()
             .responseDecodable(of: T.self) { (response) in

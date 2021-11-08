@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct WebService {
+struct WEB_SERVICE {
     static let BASE_URL = "https://fakestoreapi.com"
     static let PRODUCTS = "/products"
+}
+
+struct WEB_SERVICE_KEY{
+    static let LIMIT = "limit"
 }

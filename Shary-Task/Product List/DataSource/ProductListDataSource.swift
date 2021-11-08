@@ -14,7 +14,7 @@ class ProductListDataSource{
         //TODO CHECK Internet connection to detect whether to get data from Webservice or cached one
         
         Network.sharedInstance().getMethod(
-            url: WebService.PRODUCTS,
+            url: WEB_SERVICE.PRODUCTS,
             parameters: parameters,
             headers: nil,
             encoding: URLEncoding.default,
