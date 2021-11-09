@@ -34,6 +34,8 @@
 		D66EBC4C273899B800B043AE /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66EBC4A273899B800B043AE /* ProductDetailsViewController.xib */; };
 		D675F4E72739FF7F00DFE225 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675F4E62739FF7F00DFE225 /* NetworkConnection.swift */; };
 		D675F4E9273A02C100DFE225 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675F4E8273A02C100DFE225 /* ProductView.swift */; };
+		D675F4EC273A295A00DFE225 /* ProductListDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675F4EB273A295A00DFE225 /* ProductListDataSourceTest.swift */; };
+		D675F4F2273A2E2F00DFE225 /* ProductListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675F4F1273A2E2F00DFE225 /* ProductListViewModelTest.swift */; };
 		D6FD976C2739C57000599598 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FD976B2739C57000599598 /* BackButton.swift */; };
 		D6FD976F2739D71900599598 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FD976E2739D71900599598 /* DataController.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		D66EBC4A273899B800B043AE /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		D675F4E62739FF7F00DFE225 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		D675F4E8273A02C100DFE225 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		D675F4EB273A295A00DFE225 /* ProductListDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSourceTest.swift; sourceTree = "<group>"; };
+		D675F4F1273A2E2F00DFE225 /* ProductListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTest.swift; sourceTree = "<group>"; };
 		D6FD976B2739C57000599598 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		D6FD976E2739D71900599598 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DF840552BA1C3F8CB4877B24 /* Pods_Shary_Task_Shary_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shary_Task_Shary_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,8 @@
 		D66EBC0D27384A8C00B043AE /* Shary-TaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				D675F4F0273A2E1800DFE225 /* ViewModel */,
+				D675F4EA273A294000DFE225 /* DataSource */,
 				D66EBC0E27384A8C00B043AE /* Shary_TaskTests.swift */,
 				D66EBC1027384A8C00B043AE /* Info.plist */,
 			);
@@ -292,6 +298,22 @@
 				D66EBC4027386BDB00B043AE /* ProductListCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D675F4EA273A294000DFE225 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D675F4EB273A295A00DFE225 /* ProductListDataSourceTest.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D675F4F0273A2E1800DFE225 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D675F4F1273A2E2F00DFE225 /* ProductListViewModelTest.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D6FD976D2739D6EC00599598 /* Storage */ = {
@@ -568,6 +590,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D675F4F2273A2E2F00DFE225 /* ProductListViewModelTest.swift in Sources */,
+				D675F4EC273A295A00DFE225 /* ProductListDataSourceTest.swift in Sources */,
 				D66EBC0F27384A8C00B043AE /* Shary_TaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -780,7 +804,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6PF9J8HWS;
 				INFOPLIST_FILE = "Shary-TaskTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -803,7 +827,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6PF9J8HWS;
 				INFOPLIST_FILE = "Shary-TaskTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
