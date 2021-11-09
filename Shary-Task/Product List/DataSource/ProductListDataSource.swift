@@ -7,33 +7,57 @@
 
 import Foundation
 import Alamofire
+import CoreData
+
 class ProductListDataSource{
     
-    func getProducts(parameters:[String:Any],isSuccess:@escaping([Product]?)->Void,isError:@escaping(String?)->Void){
-        
-        //TODO CHECK Internet connection to detect whether to get data from Webservice or cached one
-        
-        Network.sharedInstance().getMethod(
-            url: WEB_SERVICE.PRODUCTS,
-            parameters: parameters,
-            headers: nil,
-            encoding: URLEncoding.default,
-            isSuccess: { (products : [Product]?) in
+    func getProducts(parameters:[String:Any],isSuccess:@escaping([Product]?,[ProductEntity]?)->Void,isError:@escaping(String?)->Void){
+    
+        if NetworkConnection.isConnectedToNetwork(){
+            Network.sharedInstance().getMethod(
+                url: WEB_SERVICE.PRODUCTS,
+                parameters: parameters,
+                headers: nil,
+                encoding: URLEncoding.default,
+                isSuccess: { (products : [Product]?) in
+                    guard let products = products else {
+                        isSuccess(nil,nil)
+                        return
+                    }
+                    isSuccess(products,nil)
+                },
+                isError: {
+                    error in
+                    guard let error = error else {
+                        isError(nil)
+                        return
+                    }
+                    isError(error)
+                }
+            )
+        }else{
+            getOfflineProducts(isSuccess: { products in
                 guard let products = products else {
-                    isSuccess(nil)
+                    isSuccess(nil,nil)
                     return
                 }
-                isSuccess(products)
-            },
-            isError: {
+                isSuccess(nil,products)
+            }, isError: {
                 error in
-                guard let error = error else {
-                    isError(nil)
-                    return
-                }
                 isError(error)
-            }
-        )
+            })
+        }
     }
     
+    
+    
+    private func getOfflineProducts(isSuccess:@escaping([ProductEntity]?)->Void,isError:@escaping(String?)->Void){
+        
+        let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
+        if let products = try? DataController.sharedInstance().viewContext.fetch(fetchRequest){
+            isSuccess(products)
+        }else{
+            isError("Something went wrong.")
+        }
+    }
 }

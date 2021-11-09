@@ -7,6 +7,8 @@
 
 import UIKit
 
+fileprivate var indicatorView:UIView?
+
 extension NSObject {
     
     static public var className: String {
@@ -64,6 +66,8 @@ extension UIColor {
     
     static var gold : UIColor { UIColor(hex: 0xfdbc4b)}
     static var grey : UIColor { UIColor(hex: 0xBEBCBB)}
+    static var mainGreen : UIColor { UIColor(hex:0x25B56E)}
+
 }
 
 
@@ -76,4 +80,39 @@ extension UIView{
         layer.shadowRadius = radius
         layer.masksToBounds = false
     }
+}
+
+extension UIViewController{
+    
+    func showActivityIndicator() {
+        view.alpha = 0.5
+        indicatorView = UIView(frame: UIScreen.main.bounds)
+        let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        indicator.center = (indicatorView?.center)!
+        indicator.color = .mainGreen
+        //UIColor(rgb: 0x1d3557)
+        indicator.startAnimating()
+        indicatorView?.addSubview(indicator)
+        self.view.addSubview(indicatorView!)
+    }
+    
+    func stopActivityIndicator(){
+        UIView.animate(withDuration:2) {
+            [weak self] in
+            guard let self = self else {return}
+            self.view.alpha = 1
+        }
+        indicatorView?.removeFromSuperview()
+        indicatorView = nil
+    }
+    
+    func showAlert(title:String,message:String,actionTitle:String,completion:@escaping()->Void){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.cancel){(action) in
+            completion()
+            alert.dismiss(animated: true, completion: nil)}
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

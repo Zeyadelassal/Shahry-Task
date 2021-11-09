@@ -15,6 +15,9 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblCount: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +25,21 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setupCell(title:String,category:String,rating:String,count:String,image:String){
+    func setupCell(title:String,category:String,rating:String,count:String,price:String){
         lblTitle.setupLabelWith(text: title, size: 14, weight: .semibold)
         lblCategory.setupLabelWith(text: category, size: 14, weight: .regular)
         lblRating.setupLabelWith(text: rating, size: 14, weight: .bold,color: .gold)
         lblCount.setupLabelWith(text: "(\(count))", size: 14, weight: .regular,color: .grey)
-        setImage(image: image)
+        lblPrice.setupLabelWith(text: price + " \(CONSTANTS.CURRENCY)", size: 14, weight: .bold,color: .mainGreen)
         setShadow()
+    }
+    
+    func setupImageWith(image:String){
+        setImage(image: image)
+    }
+    
+    func setupImageWith(image:Data){
+        imgProduct.image = UIImage(data: image)
     }
     
     private func setImage(image:String){

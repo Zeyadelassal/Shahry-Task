@@ -20,15 +20,26 @@ extension ProductListViewController{
     }
     
     func observeCollectionView(){
+        
         viewModel?.productsDriver?.drive(colProducts.rx.items(cellIdentifier: ProductListCollectionViewCell.className, cellType: ProductListCollectionViewCell.self)){
-            row,item,cell in
+            [weak self] row,item,cell in
+            guard let self = self else {return}
+            self.stopActivityIndicator()
             let title = item.title ?? "No provided title"
             let category = item.category ?? "N/A"
-            let rating = String(item.rating?.rate ?? 0.0)
-            let count =  String(item.rating?.count ?? 0)
-            let image = item.image ?? ""
-            cell.setupCell(title: title, category: category, rating: rating, count: count, image: image)
+            let rating = String(item.rate ?? 0.0)
+            let count =  String(item.count ?? 0)
+            let price = String(item.price ?? 0.0)
+            if let imageData = item.imageData{
+                cell.setupImageWith(image: imageData)
+            }else{
+                let image = item.image ?? ""
+                cell.setupImageWith(image: image)
+
+            }
+            cell.setupCell(title: title, category: category, rating: rating, count: count,price:price)
         }.disposed(by: disposeBag)
+        
         
         colProducts.rx.prefetchItems.subscribe(onNext:{
             [weak self] indexPaths in
@@ -51,14 +62,14 @@ extension ProductListViewController{
             self.moveToProductDetails()
         }).disposed(by: disposeBag)
     }
-    
+
 }
 
 extension ProductListViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 60 - 10 ) / 2
-        let height = (collectionView.frame.size.height - 20) / 2.5
+        let height = (collectionView.frame.size.height - 20) / 3
         return CGSize(width: width, height: height)
     }
     
