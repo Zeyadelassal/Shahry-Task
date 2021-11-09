@@ -35,7 +35,7 @@ class ProductListViewController: UIViewController {
     
     private func setupLabels(){
         lblHeader.setupLabelWith(text: "Hey👋", size: 14, weight: .bold)
-        lblUserName.setupLabelWith(text: "Shary", size: 16, weight: .bold)
+        lblUserName.setupLabelWith(text: "Shahry", size: 16, weight: .bold)
     }
     
     func moveToProductDetails(){
