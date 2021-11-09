@@ -1,4 +1,4 @@
-# Shary-Task
+# Shahry-Task
 
 -  Architecture Design Pattern used: MVVM + RxSwift.
 -  Offline storage: CoreData. 
